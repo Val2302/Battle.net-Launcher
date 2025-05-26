@@ -8,6 +8,32 @@
         Title="MainWindow" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
         MinHeight="600" MinWidth="1000" Background="#FF110203"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Resources>
+        <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
+            <Grid Name="Btn" Height="40" Margin="20,0,0,0">
+                <Border>
+                    <Grid>
+                        <Label Content="{TemplateBinding Content}"
+                               Background="Transparent" FontSize="23"
+                               VerticalAlignment="Center">
+                            <Label.Style>
+                                <Style TargetType="Label">
+                                    <Setter Property="Foreground" Value="#FF9D9999"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Path=IsMouseOver, ElementName=Btn}" 
+                                                     Value="true">
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Label.Style>
+                        </Label>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220"/>
@@ -21,17 +47,16 @@
         <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
             <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
                 <StackPanel Orientation="Horizontal">
-                    <Button Width="100" />
-                    <Button Width="100" />
-                    <Button Width="100" />
-                    <Button Width="100" />
-                    <Button Width="100" />
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ" />
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ОБЩЕНИЕ" />
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН" />
+                    <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="НОВОСТИ" />
                 </StackPanel>
             </Border>
         </Grid>
 
         <Grid Name="SlideMenu" Grid.Column="0" Grid.Row="1">
-            <Border BorderThickness="1,0,1,1" BorderBrush="FF303031" />
+            <Border BorderThickness="1,0,1,1" BorderBrush="#FF303031" />
             <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
 
             <StackPanel Orientation="Vertical">
