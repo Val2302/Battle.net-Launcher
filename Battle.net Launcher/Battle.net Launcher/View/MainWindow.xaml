@@ -1,13 +1,19 @@
-﻿<Window x:Class="Battle.net_Launcher.MainWindow"
+﻿<Window x:Class="Battle.net_Launcher.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Battle.net_Launcher"
+        xmlns:vm="clr-namespace:Battle.net_Launcher.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000" MaxHeight="600" MaxWidth="1000"
         MinHeight="600" MinWidth="1000" Background="#FF110203"
         WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <!-- TOP MENU -->
         <ControlTemplate x:Key="TopMenuButtons" TargetType="Button">
@@ -196,15 +202,17 @@
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
-            <Border>
-                <Border.Effect>
-                    <BlurEffect Radius="2"/>
-                </Border.Effect>
-            </Border>
-            
-            <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
+        <Frame Grid.ColumnSpan="10" Grid.RowSpan="10" NavigationUIVisibility="Hidden" Content="{Binding CurrPage}"/>
+
+        <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2" Background="Black" Opacity="0.5">
+            <Border BorderThickness="1" BorderBrush="#FF303031">
                 <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <StackPanel.Effect>
+                            <BlurEffect Radius="10"/>
+                        </StackPanel.Effect>
+                    </StackPanel>
+                    
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ" />
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ОБЩЕНИЕ" />
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="МАГАЗИН" />
@@ -230,56 +238,56 @@
             <Border BorderThickness="0" Background="Black" Opacity="0.6"/>
 
             <StackPanel Orientation="Vertical">
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWowPage}"
                         Content="World Of Warcraft">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/WOW.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenHearthstonePage}"
                         Content="Hearthstone">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/hs.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenOverwatchPage}"
                         Content="Overwatch">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/overwatch.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenWarcraftPage}"
                         Content="Warcraft III">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/warcraft3.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenDiabloPage}"
                         Content="Diablo III">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/diablo.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenStormHeroesPage}"
                         Content="Heroes of the Storm">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/hots.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenStarCraft2Page}"
                         Content="StarCraft II">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/sc2.png</ImageSource>
                     </Button.Resources>
                 </Button>
 
-                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Command="{Binding OpenStarCraftPage}"
                         Content="StarCraft">
                     <Button.Resources>
                         <ImageSource x:Key="Img">Res/Icons/sc.png</ImageSource>

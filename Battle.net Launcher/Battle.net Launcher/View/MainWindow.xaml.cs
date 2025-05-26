@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Battle.net_Launcher
+namespace Battle.net_Launcher.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
