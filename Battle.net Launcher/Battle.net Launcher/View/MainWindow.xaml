@@ -192,11 +192,17 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80" />
+            <RowDefinition Height="80"/>            
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <Grid Name="TopMenu" Grid.Row="0" Grid.ColumnSpan="2">
+            <Border>
+                <Border.Effect>
+                    <BlurEffect Radius="2"/>
+                </Border.Effect>
+            </Border>
+            
             <Border BorderThickness="1" BorderBrush="#FF303031" Background="Transparent">
                 <StackPanel Orientation="Horizontal">
                     <Button Template="{StaticResource ResourceKey=TopMenuButtons}" Content="ИГРЫ" />
