@@ -114,5 +114,9 @@
     <Resource Include="View\Res\Icons\warcraft3.png" />
     <Resource Include="View\Res\Icons\WOW.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Res\Icons\Close.png" />
+    <Resource Include="View\Res\Icons\Open.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
