@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Battle.net_Launcher
+namespace Battle.net_Launcher.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StarCraftPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StarCraftPage : Page
     {
-        public MainWindow ( )
+        public StarCraftPage ( )
         {
             InitializeComponent( );
         }
