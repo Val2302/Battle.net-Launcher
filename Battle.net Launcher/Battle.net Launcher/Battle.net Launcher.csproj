@@ -98,8 +98,21 @@
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\Res\Background\" />
-    <Folder Include="View\Res\Icons\" />
     <Folder Include="View\Res\TopBackground\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="View\Res\Icons\codbo4.png" />
+    <Resource Include="View\Res\Icons\codmw.png" />
+    <Resource Include="View\Res\Icons\codrrw2.png" />
+    <Resource Include="View\Res\Icons\diablo.png" />
+    <Resource Include="View\Res\Icons\dsn2.png" />
+    <Resource Include="View\Res\Icons\hots.png" />
+    <Resource Include="View\Res\Icons\hs.png" />
+    <Resource Include="View\Res\Icons\overwatch.png" />
+    <Resource Include="View\Res\Icons\sc.png" />
+    <Resource Include="View\Res\Icons\sc2.png" />
+    <Resource Include="View\Res\Icons\warcraft3.png" />
+    <Resource Include="View\Res\Icons\WOW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
